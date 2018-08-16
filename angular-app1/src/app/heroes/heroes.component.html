@@ -1,0 +1,18 @@
+<!-- <h2>STARS</h2> -->
+<!-- <ul class="stars">
+    <li *ngFor="let star of stars" (click)="onSelect(star)" [class.selected]="star === selectedStar">
+        <span class="badge">{{star.id}}</span> {{star.name}}
+    </li>
+</ul> -->
+<!-- <app-hero-detail [star]="selectedStar"></app-hero-detail> -->
+
+<div>
+    <label>Star name: <input type="text" #starName></label>
+    <button (click)="add(starName.value); starName.value=''">add</button>
+</div>
+<ul class="stars">
+    <li *ngFor="let star of stars">
+        <a routerLink="/detail/{{star.id}}"><span class="badge">{{star.id}}</span> {{star.name}}</a>
+        <button class="delete" title="delete star" (click)="delete(star)">x</button>
+    </li>
+</ul>

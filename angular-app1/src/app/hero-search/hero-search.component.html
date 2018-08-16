@@ -1,0 +1,7 @@
+<div id="search-component">
+    <h4>Star Search</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" type="text">
+    <ul class="search-result">
+        <li *ngFor="let star of stars$ | async"><a routerLink="/detail/{{star.id}}">{{star.name}}</a></li>
+    </ul>
+</div>
